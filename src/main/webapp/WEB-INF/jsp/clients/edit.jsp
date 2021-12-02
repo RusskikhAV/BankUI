@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://thymeleaf.org ">
+<html xmlns:th="http://thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <h2>client edit</h2>
 </head>
 <body>
