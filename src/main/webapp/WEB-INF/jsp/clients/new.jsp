@@ -20,7 +20,7 @@
     <p style="color: red" th:if="${#fields.hasErrors('secondName')}" th:errors="*{secondName}">Error second name</p>
     <br/>
     <input type="text" th:field="*{telephoneNumber}" id="telephoneNumber" placeholder="8-888-888-88-88"/>
-    <p style="color: red" th:if="${#fields.hasErrors('telephoneNumber')}" th:errors="*{telephoneNumber}">Error trlephone number</p>
+    <p style="color: red" th:if="${#fields.hasErrors('telephoneNumber')}" th:errors="*{telephoneNumber}">Error telephone number</p>
     <br/>
     <input type="text" th:field="*{eMail}" id="eMail" placeholder="Email"/>
     <p style="color: red" th:if="${#fields.hasErrors('eMail')}" th:errors="*{eMail}">Error email</p>
