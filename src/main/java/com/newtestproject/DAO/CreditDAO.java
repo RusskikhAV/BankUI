@@ -1,25 +1,42 @@
 package com.newtestproject.DAO;
 
+import com.newtestproject.model.Client;
 import com.newtestproject.model.Credit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class CreditDAO {
-    private static int CREDIT_COUNT;
-    private List<Credit> credits;
-    {
-        credits = new ArrayList<>();
-        credits.add(new Credit(1,100_000,12,12));
+
+    BankDAO bankDAO;
+    private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Credit> index(){
-        return credits;
+    @Autowired
+    public CreditDAO(BankDAO bankDAO) {
+        this.bankDAO = bankDAO;
     }
 
     public Credit show(int id){
-        return credits.stream().filter(credit -> credit.getId() == id).findAny().orElse(null);
+        return bankDAO.showCredits().stream().filter(credit -> credit.getCreditId() == id).findAny().orElse(null);
+
+    }
+
+    public void save(Credit credit){
+        jdbcTemplate.update("INSERT INTO credits (INTERESTRATE, CREDITTERM, CLIENTID) VALUES (?, ?, ?)" ,credit.getInterestRate(), credit.getCreditTerm(), credit.getClientId());
+    }
+
+    public void update(int id, Credit credit){
+
+    }
+
+    public void delete(int id){
+
     }
 }

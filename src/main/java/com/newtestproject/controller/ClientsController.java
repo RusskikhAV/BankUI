@@ -21,11 +21,6 @@ public class ClientsController {
         this.clientDAO = clientDAO;
     }
 
-    @GetMapping()
-    public String index(Model model){
-        model.addAttribute("clients",clientDAO.index());
-        return "clients/index";
-    }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
@@ -45,7 +40,7 @@ public class ClientsController {
             return "clients/new";
 
         clientDAO.save(client);
-        return "redirect:/clients";
+        return "redirect:/";
     }
 
     @GetMapping("/{id}/edit")
@@ -60,17 +55,12 @@ public class ClientsController {
         if (bindingResult.hasErrors())
             return "clients/edit";
         clientDAO.update(id,client);
-        return "redirect:/clients";
+        return "redirect:/";
     }
 
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id){
         clientDAO.delete(id);
         return "redirect:/clients";
-    }
-
-    @GetMapping("/check")
-    public String check(){
-        return "/clients/check";
     }
 }

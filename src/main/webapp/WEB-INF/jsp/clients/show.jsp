@@ -4,7 +4,7 @@
     <h2>client</h2>
 </head>
 <body>
-<p th:text="${client.getId()}">value</p>
+<p th:text="${client.getClientId()}">value</p>
 <p th:text="${client.getName()}">value</p>
 <p th:text="${client.getSurname()}">value</p>
 <p th:text="${client.getSecondName()}">value</p>
@@ -13,9 +13,9 @@
 <p th:text="${client.getPassportNumber()}">value</p>
 
 
-<a th:href="@{/clients/{id}/edit(id=${client.getId()})}">Edit</a>
+<a th:href="@{/clients/{id}/edit(id=${client.getClientId()})}">Edit</a>
 <br/>
-<form th:method="DELETE" th:action ="@{/clients/{id}(id=${client.getId()})}">
+<form th:method="DELETE" th:action ="@{/clients/{id}(id=${client.getClientId()})}">
     <input type="submit" value="Delete">
 </form>
 </body>

@@ -1,33 +1,29 @@
 package com.newtestproject.DAO;
 
+import com.newtestproject.model.Bank;
 import com.newtestproject.model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-
-import java.util.*;
 
 @Component
 public class ClientDAO {
-    private static int CLIENT_COUNT;
-    private Set<Client> clients;
+    Bank bank;
+    private JdbcTemplate jdbcTemplate;
 
-    {
-        clients = new HashSet<>();
-       //clients.add(new Client(++CLIENT_COUNT,"Tom","Johnson", "Smith","8-912-345-23-23", "email@mail.ru","36 32 223432"));
-       clients.add(new Client(++CLIENT_COUNT,"Игорь","Серов", "Владимирович","8-912-345-23-23", "email@mail.ru","36 32 223432"));
-    }
-
-    public Set<Client> index(){
-
-        return clients;
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     public Client show(int id){
-        return clients.stream().filter(clients -> clients.getId() == id).findAny().orElse(null);
+        return bank.getClients().get(id - 1);
     }
 
     public void save(Client client){
-        client.setId(++CLIENT_COUNT);
-        clients.add(client);
+        jdbcTemplate.update("INSERT INTO clients (NAME,SURNAME,SECONDNAME,TELEPHONENUMBER,EMAIL,PASSPORTNUMBER)VALUES (?, ?, ?, ?, ?, ?)",client.getName(), client.getSurname(),
+                client.getSecondName(),client.getTelephoneNumber(), client.getEMail(), client.getPassportNumber());
+
     }
 
     public void update(int id, Client updateClient){
@@ -43,6 +39,7 @@ public class ClientDAO {
     }
 
     public void delete(int id){
-        clients.removeIf(client -> client.getId() == id);
+       // bankDAO.showClients().removeIf(client -> client.getId() == id);
     }
+
 }

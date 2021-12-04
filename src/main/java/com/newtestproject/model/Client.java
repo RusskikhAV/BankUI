@@ -8,7 +8,7 @@ import javax.validation.constraints.*;
 @Setter
 @Getter
 public class Client {
-    private int id;
+    private int clientId;
 
     @NotEmpty(message = "поле - \"Имя\" не должно быть пустым")
     @Size(min = 2, max = 15, message = "Имя не может быть меньше 2х и больше 15 символов")
@@ -32,14 +32,12 @@ public class Client {
     @Pattern(regexp = "[0-9]{2} [0-9]{2} [0-9]{6}")
     private String passportNumber;
 
-    private int creditLimit;
-
     public Client(){
 
     }
 
-    public Client(int id, String name, String surname, String secondName, String telephoneNumber, String eMail, String passportNumber) {
-        this.id = id;
+    public Client(int clientId, String name, String surname, String secondName, String telephoneNumber, String eMail, String passportNumber) {
+        this.clientId = clientId;
         this.name = name;
         this.surname = surname;
         this.secondName = secondName;
