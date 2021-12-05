@@ -3,8 +3,6 @@ package com.newtestproject.DAO;
 import com.newtestproject.model.Client;
 import com.newtestproject.model.Credit;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,7 +1,10 @@
 package com.newtestproject.controller;
 
 import com.newtestproject.DAO.BankDAO;
+import com.newtestproject.model.Bank;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +17,7 @@ public class BankController {
 
     private BankDAO bankDAO;
 
-    @Autowired
+   @Autowired
     public BankController(BankDAO bankDAO) {
         this.bankDAO = bankDAO;
     }

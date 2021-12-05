@@ -5,7 +5,7 @@
     <h2>client edit</h2>
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/clients/{id}(id=${client.getId()})}" th:object="${client}">
+<form th:method="PATCH" th:action="@{/clients/{id}(id=${client.getClientId()})}" th:object="${client}">
     <br/>
     <input type="text" th:field="*{name}" id="name"/>
     <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error name</p>

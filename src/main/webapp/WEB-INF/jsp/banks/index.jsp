@@ -1,11 +1,43 @@
-<html xmlns:th="http://thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <h2>Bank</h2>
+    <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank.css"/>
+
 </head>
 <body>
-<a href="/banks/credits">All credits</a>
-<br/>
-<a href="/banks/clients">All clients</a>
+<div id="workarea">
+    <p id="head-text">Bank "..."</p>
+    <div class="position">
+        <div class="svg-wrapper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                <rect id="shape" height="40" width="150" />
+                <div id="text">
+                    <a href="/banks/clients"><span class="spot"></span>All clients</a>
+                </div>
+            </svg>
+        </div>
+
+        <div class="svg-wrapper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                <rect id="shape" height="40" width="150" />
+                <div id="text">
+                    <a href="/banks/credits"><span class="spot"></span>All credit</a>
+                </div>
+            </svg>
+        </div>
+    </div>
+    <div class="position">
+        <div class="svg-wrapper">
+            <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                <rect id="shape" height="40" width="150" />
+                <div id="text">
+                    <a href="/"><span class="spot"></span>Home</a>
+                </div>
+            </svg>
+        </div>
+    </div>
+</div>
 </body>
 </html>

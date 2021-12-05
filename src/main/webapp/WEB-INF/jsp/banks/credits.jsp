@@ -1,6 +1,7 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank.css">
 </head>
 <body>
 

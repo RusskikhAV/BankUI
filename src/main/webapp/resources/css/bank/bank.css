@@ -34,7 +34,7 @@ css {
 /*    start code for the actual button:         */
 
 
-/*   
+/*
     Spot is the span on the inside of the href that
     fills the parent and makes the hover and link work
     for the entire div
@@ -48,7 +48,7 @@ css {
     left: 0;
 }
 /*
-    This is the outer svg wrapper that the SVG itself will 
+    This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
 */
 
@@ -78,7 +78,7 @@ css {
     stroke-dashoffset: -220;
     transition: 1s all ease;
 }
-/* 
+/*
     Pushing the text up into the SVG. Without this the
     text would be below the div's.
 */
@@ -94,7 +94,7 @@ css {
     font-weight: 100;
     font-size: 1.1em;
 }
-/* 
+/*
     Changing the shape on hover. I change the color of the stroke,
 make it thinner, then set it to again wrap around the entire parent element.
 */
@@ -111,5 +111,4 @@ make it thinner, then set it to again wrap around the entire parent element.
     background: -webkit-linear-gradient(#eee, #333);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }

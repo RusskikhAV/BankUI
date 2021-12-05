@@ -8,14 +8,6 @@ css {
     width: 100%;
     height: 100%;
 }
-
-.position {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    margin-top: 15%;
-}
-
 #workarea {
     position: absolute;
     width: 100%;
@@ -23,7 +15,14 @@ css {
     background-color: #1e1a3e;
     font-family: Raleway;
 }
+#head-text {
+    text-align: center;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
+}
 #personal {
     color:white;
     text-decoration:none;
@@ -34,7 +33,7 @@ css {
 /*    start code for the actual button:         */
 
 
-/*   
+/*
     Spot is the span on the inside of the href that
     fills the parent and makes the hover and link work
     for the entire div
@@ -48,7 +47,7 @@ css {
     left: 0;
 }
 /*
-    This is the outer svg wrapper that the SVG itself will 
+    This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
 */
 
@@ -78,7 +77,7 @@ css {
     stroke-dashoffset: -220;
     transition: 1s all ease;
 }
-/* 
+/*
     Pushing the text up into the SVG. Without this the
     text would be below the div's.
 */
@@ -94,7 +93,7 @@ css {
     font-weight: 100;
     font-size: 1.1em;
 }
-/* 
+/*
     Changing the shape on hover. I change the color of the stroke,
 make it thinner, then set it to again wrap around the entire parent element.
 */
@@ -105,11 +104,35 @@ make it thinner, then set it to again wrap around the entire parent element.
     stroke-dashoffset: 0;
     stroke: #06D6A0;
 }
-#head-text {
-    text-align: center;
-    font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
+.table {
+    width: 50%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    background: #eeeeee;
+}
+.table th {
+    font-weight: bold;
+    padding: 5px;
+    background: #efefef;
+    border: 1px solid #dddddd;
+}
+.table td {
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+#form-delete{
+    background: #1e1a3e;
+}
+
+#input-delete{
+    background: #1e1a3e;
+    text-align: center;
+}
+#client-text{
+    color: white;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.2em;
 }

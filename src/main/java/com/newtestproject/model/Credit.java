@@ -1,18 +1,22 @@
 package com.newtestproject.model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
 
 @Data
 public class Credit {
     private int creditId;
+
+    @Min(value = 1, message = "min interestRate")
+    @Max(value = 35, message = "max interestRate")
     private double interestRate;
+
+    @Min(value = 1, message = "min creditTerm")
+    @Max(value = 35, message = "max creditTerm")
     private int creditTerm;
+
     private int clientId;
 
     public Credit() {

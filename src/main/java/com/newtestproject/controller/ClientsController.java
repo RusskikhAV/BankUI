@@ -13,14 +13,12 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/clients")
 public class ClientsController {
-
     private ClientDAO clientDAO;
 
     @Autowired
     public ClientsController(ClientDAO clientDAO) {
         this.clientDAO = clientDAO;
     }
-
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model){
@@ -34,11 +32,10 @@ public class ClientsController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("client") @Valid Client client,
-                         BindingResult bindingResult){
-        if(bindingResult.hasErrors())
+    public String create(@ModelAttribute("client") @Valid Client client, BindingResult bindingResult){
+        if(bindingResult.hasErrors()) {
             return "clients/new";
-
+        }
         clientDAO.save(client);
         return "redirect:/";
     }
@@ -52,7 +49,7 @@ public class ClientsController {
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("client") @Valid Client client, BindingResult bindingResult,
                          @PathVariable("id") int id){
-        if (bindingResult.hasErrors())
+        if(bindingResult.hasErrors())
             return "clients/edit";
         clientDAO.update(id,client);
         return "redirect:/";
@@ -61,6 +58,6 @@ public class ClientsController {
     @DeleteMapping("/{id}")
     public String delete(@PathVariable("id") int id){
         clientDAO.delete(id);
-        return "redirect:/clients";
+        return "redirect:/banks/clients";
     }
 }

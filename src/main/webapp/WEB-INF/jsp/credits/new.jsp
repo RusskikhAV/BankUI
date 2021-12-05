@@ -10,13 +10,13 @@
 <form th:method="POST" th:action="@{/credits}" th:object="${credit}">
 
 
-    <input type="number" th:field="*{interestRate}" id="interestRate" placeholder = "Процентная ставка"/>
+    <input type="text" th:field="*{interestRate}" id="interestRate" placeholder = "Процентная ставка"/>
     <p style="color: red" th:if="${#fields.hasErrors('interestRate')}" th:errors="*{interestRate}">Error</p>
     <br/>
-    <input type="number" th:field="*{creditTerm}" id="creditTerm" placeholder = "Срок кредитования"/>
+    <input type="text" th:field="*{creditTerm}" id="creditTerm" placeholder = "Срок кредитования"/>
     <p style="color: red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">Error</p>
     <br/>
-    <input type="number" th:field="*{clientId}" id="clientId" placeholder = "Номер клиента"/>
+    <input type="text" th:field="*{clientId}" id="clientId" placeholder = "Номер клиента"/>
     <p style="color: red" th:if="${#fields.hasErrors('clientId')}" th:errors="*{clientId}">Error</p>
     <br/>
     <input type="submit" name="Save"/>
