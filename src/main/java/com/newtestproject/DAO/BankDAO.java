@@ -21,13 +21,13 @@ public class BankDAO {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Credit> showCredits(){
+    public List<Credit> showCredits() {
 
         return jdbcTemplate.query("SELECT * FROM credits", new BeanPropertyRowMapper<>(Credit.class));
     }
 
-    public List<Client> showClients(){
+    public List<Client> showClients() {
         return jdbcTemplate.query("SELECT * FROM clients", new BeanPropertyRowMapper<>(Client.class));
     }
 
-  }
+}

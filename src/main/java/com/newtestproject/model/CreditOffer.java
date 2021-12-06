@@ -14,7 +14,8 @@ public class CreditOffer {
     @Max(value = 10_000_000, message = "Сумма кредита не может быть больше {max}")
     private int amountCredit;
 
-    public CreditOffer(){}
+    public CreditOffer() {
+    }
 
     public CreditOffer(int id, Client client, Credit credit, int amountCredit) {
         this.id = id;

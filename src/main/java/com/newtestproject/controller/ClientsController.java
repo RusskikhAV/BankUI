@@ -13,7 +13,7 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/clients")
 public class ClientsController {
-    private ClientDAO clientDAO;
+    private final ClientDAO clientDAO;
 
     @Autowired
     public ClientsController(ClientDAO clientDAO) {
@@ -21,19 +21,19 @@ public class ClientsController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") int id, Model model){
-        model.addAttribute("client",clientDAO.show(id));
+    public String show(@PathVariable("id") int id, Model model) {
+        model.addAttribute("client", clientDAO.show(id));
         return "clients/show";
     }
 
     @GetMapping("/new")
-    public String newClient(@ModelAttribute("client") Client client){
+    public String newClient(@ModelAttribute("client") Client client) {
         return "clients/new";
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("client") @Valid Client client, BindingResult bindingResult){
-        if(bindingResult.hasErrors()) {
+    public String create(@ModelAttribute("client") @Valid Client client, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "clients/new";
         }
         clientDAO.save(client);
@@ -41,22 +41,22 @@ public class ClientsController {
     }
 
     @GetMapping("/{id}/edit")
-    public String editClient(@PathVariable("id") int id, Model model){
+    public String editClient(@PathVariable("id") int id, Model model) {
         model.addAttribute("client", clientDAO.show(id));
         return "clients/edit";
     }
 
     @PatchMapping("/{id}")
     public String update(@ModelAttribute("client") @Valid Client client, BindingResult bindingResult,
-                         @PathVariable("id") int id){
-        if(bindingResult.hasErrors())
+                         @PathVariable("id") int id) {
+        if (bindingResult.hasErrors())
             return "clients/edit";
-        clientDAO.update(id,client);
+        clientDAO.update(id, client);
         return "redirect:/";
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable("id") int id){
+    public String delete(@PathVariable("id") int id) {
         clientDAO.delete(id);
         return "redirect:/banks/clients";
     }

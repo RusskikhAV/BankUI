@@ -2,7 +2,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/resources/css/clients/clientShow.css">
-
 </head>
 <body>
 <div id="workarea">
@@ -75,8 +74,10 @@
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                 <rect id="shape" height="40" width="150"/>
                 <div id="text">
-                     <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}" target="_blank" onClick="popupWin = window.open(this.href, 'contacts', 'location,width=1200,height=900,top=0'); popupWin.focus(); return false;"><span class="spot"></span>Client credits</a>
-                 </div>
+                    <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}" target="_blank"
+                       onClick="popupWin = window.open(this.href, 'contacts', 'location,width=1200,height=900,top=0'); popupWin.focus(); return false;"><span
+                            class="spot"></span>Client credits</a>
+                </div>
             </svg>
         </div>
     </div>

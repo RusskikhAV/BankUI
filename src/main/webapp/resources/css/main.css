@@ -25,12 +25,13 @@ css {
 }
 
 #personal {
-    color:white;
-    text-decoration:none;
-    position:absolute;
-    bottom:15px;
-    right:2%;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 15px;
+    right: 2%;
 }
+
 /*    start code for the actual button:         */
 
 
@@ -47,6 +48,7 @@ css {
     top: 0;
     left: 0;
 }
+
 /*
     This is the outer svg wrapper that the SVG itself will 
     fill. Multiple svg-wrapper classes can be put side by side.
@@ -63,6 +65,7 @@ css {
     margin-left: 5px;
     margin-right: 5px
 }
+
 /*
   This is where we define the fill, color, thickness,
   and stroke pattern of the SVG when there is no hover.
@@ -78,7 +81,8 @@ css {
     stroke-dashoffset: -220;
     transition: 1s all ease;
 }
-/* 
+
+/*
     Pushing the text up into the SVG. Without this the
     text would be below the div's.
 */
@@ -94,7 +98,8 @@ css {
     font-weight: 100;
     font-size: 1.1em;
 }
-/* 
+
+/*
     Changing the shape on hover. I change the color of the stroke,
 make it thinner, then set it to again wrap around the entire parent element.
 */
@@ -105,6 +110,7 @@ make it thinner, then set it to again wrap around the entire parent element.
     stroke-dashoffset: 0;
     stroke: #06D6A0;
 }
+
 #head-text {
     text-align: center;
     font-size: 72px;

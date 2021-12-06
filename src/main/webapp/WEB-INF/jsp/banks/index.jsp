@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://thymeleaf.org">
+>
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank.css"/>
@@ -12,7 +12,7 @@
     <div class="position">
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/banks/clients"><span class="spot"></span>All clients</a>
                 </div>
@@ -21,7 +21,7 @@
 
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/banks/credits"><span class="spot"></span>All credit</a>
                 </div>
@@ -31,7 +31,7 @@
     <div class="position">
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/"><span class="spot"></span>Home</a>
                 </div>

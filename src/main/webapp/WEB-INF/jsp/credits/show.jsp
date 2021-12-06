@@ -12,7 +12,7 @@
 
 <a th:href="@{/credits/{id}/edit(id=${credit.getCreditId()})}">Edit</a>
 <br/>
-<form th:method="DELETE" th:action ="@{/credits/{id}(id=${credit.getCreditId()})}">
+<form th:method="DELETE" th:action="@{/credits/{id}(id=${credit.getCreditId()})}">
     <input type="submit" value="Delete">
 </form>
 </body>

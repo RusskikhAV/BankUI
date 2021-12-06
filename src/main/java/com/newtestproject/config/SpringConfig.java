@@ -1,7 +1,5 @@
 package com.newtestproject.config;
 
-import com.newtestproject.DAO.BankDAO;
-import com.newtestproject.model.Bank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -69,7 +67,7 @@ public class SpringConfig implements WebMvcConfigurer {
         return dataSource;
     }
 
-        @Bean
+    @Bean
     public JdbcTemplate getJdbcTemplate() {
         return new JdbcTemplate(dataSource());
     }

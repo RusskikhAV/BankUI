@@ -13,7 +13,7 @@
         <!--start button, nothing above this is necessary -->
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/clients/new"><span class="spot"></span>Create new client</a>
                 </div>
@@ -22,7 +22,7 @@
         <!--Next button -->
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/credits/new"><span class="spot"></span>Create new credit</a>
                 </div>
@@ -31,7 +31,7 @@
         <!--Next button -->
         <div class="svg-wrapper">
             <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
-                <rect id="shape" height="40" width="150" />
+                <rect id="shape" height="40" width="150"/>
                 <div id="text">
                     <a href="/banks"><span class="spot"></span>Bank</a>
                 </div>

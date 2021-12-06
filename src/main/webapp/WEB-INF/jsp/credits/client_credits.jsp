@@ -3,7 +3,7 @@
       xmlns:th="http://thymeleaf.org">
 <head>
     <title>All clients</title>
-    <link rel="stylesheet" type="text/css" href="/resources/css/bank/bankClients.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/clients/client_credits_style.css">
 </head>
 <body>
 <div id="workarea">
