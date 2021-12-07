@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-
 @Component
 public class CreditDAO implements CommonRepository<Credit> {
 
@@ -27,14 +26,14 @@ public class CreditDAO implements CommonRepository<Credit> {
 
     @Override
     public void save(Credit credit) {
-        jdbcTemplate.update("INSERT INTO credits (INTERESTRATE, CREDITTERM, CLIENTID) VALUES (?, ?, ?)",
-                credit.getInterestRate(), credit.getCreditTerm(), credit.getClientId());
+        jdbcTemplate.update("INSERT INTO credits (INTERESTRATE, CREDITTERM, AMOUNTCREDIT, CLIENTID) VALUES (?, ?, ?, ?)",
+                credit.getInterestRate(), credit.getCreditTerm(), credit.getAmountCredit(), credit.getClientId());
     }
 
     @Override
     public void update(int id, Credit updatedCredit) {
-        jdbcTemplate.update("UPDATE credits SET INTERESTRATE=?, CREDITTERM=? WHERE CREDITID=?",
-                updatedCredit.getInterestRate(), updatedCredit.getCreditTerm(), id);
+        jdbcTemplate.update("UPDATE credits SET INTERESTRATE=?, CREDITTERM=?, AMOUNTCREDIT=? WHERE CREDITID=?",
+                updatedCredit.getInterestRate(), updatedCredit.getCreditTerm(), updatedCredit.getAmountCredit(), id);
     }
 
     @Override

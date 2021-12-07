@@ -4,11 +4,9 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.DispatcherType;
-import javax.servlet.FilterRegistration;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import java.util.EnumSet;
+
 
 public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -35,6 +33,7 @@ public class DispatcherServlet extends AbstractAnnotationConfigDispatcherServlet
     }
 
     private void registerHiddenFieldFilter(ServletContext aContext) {
+
         aContext.addFilter("hiddenHttpMethodFilter",
                 new HiddenHttpMethodFilter()).addMappingForUrlPatterns(null, true, "/*");
     }

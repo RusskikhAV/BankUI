@@ -1,26 +1,29 @@
 package com.newtestproject.model;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+import lombok.Data;
 
+import java.time.LocalDate;
+
+@Data
 public class CreditOffer {
-    private int id;
-    private Client client;
-    private Credit credit;
-
-    @NotEmpty
-    @Min(value = 10_000, message = "Сумма кредита не может быть меньше {min}")
-    @Max(value = 10_000_000, message = "Сумма кредита не может быть больше {max}")
-    private int amountCredit;
+    private int idChek;
+    private LocalDate date;
+    private double payment;
+    private double percent;
+    private double bodyCredit;
+    private double balance;
+    private int clientId;
 
     public CreditOffer() {
     }
 
-    public CreditOffer(int id, Client client, Credit credit, int amountCredit) {
-        this.id = id;
-        this.client = client;
-        this.credit = credit;
-        this.amountCredit = amountCredit;
+    public CreditOffer(int idChek, LocalDate date, double payment, double percent, double bodyCredit, double balance, int clientId) {
+        this.idChek = idChek;
+        this.date = date;
+        this.payment = payment;
+        this.percent = percent;
+        this.bodyCredit = bodyCredit;
+        this.balance = balance;
+        this.clientId = clientId;
     }
 }

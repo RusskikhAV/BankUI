@@ -1,6 +1,8 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
+    <title>Clients</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
     <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank_clients.css">
 </head>
 <body>
@@ -19,6 +21,28 @@
                 </td>
             </tr>
         </table>
+    </div>
+
+    <div class="position">
+        <div class="site_button">
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150"/>
+                    <div id="text">
+                        <a href="/banks"><span class="spot"></span>Previous</a>
+                    </div>
+                </svg>
+            </div>
+
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150"/>
+                    <div id="text">
+                        <a href="/"><span class="spot"></span>Home</a>
+                    </div>
+                </svg>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -17,16 +17,25 @@ public class Credit {
     @Max(value = 35, message = "max creditTerm")
     private int creditTerm;
 
+    private int amountCredit;
     private int clientId;
 
     public Credit() {
 
     }
 
-    public Credit(int creditId, double interestRate, int creditTerm, int clientId) {
+    public Credit(double interestRate, int creditTerm, int amountCredit, int clientId) {
+        this.interestRate = interestRate;
+        this.creditTerm = creditTerm;
+        this.amountCredit = amountCredit;
+        this.clientId = clientId;
+    }
+
+    public Credit(int creditId, double interestRate, int creditTerm, int amountCredit, int clientId) {
         this.creditId = creditId;
         this.interestRate = interestRate;
         this.creditTerm = creditTerm;
+        this.amountCredit = amountCredit;
         this.clientId = clientId;
     }
 

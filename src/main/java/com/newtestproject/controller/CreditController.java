@@ -1,6 +1,7 @@
 package com.newtestproject.controller;
 
 import com.newtestproject.DAO.CreditDAO;
+import com.newtestproject.DAO.CreditOfferDAO;
 import com.newtestproject.model.Credit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +15,12 @@ import javax.validation.Valid;
 @RequestMapping("/credits")
 public class CreditController {
     private final CreditDAO creditDAO;
+    private final CreditOfferDAO creditOfferDAO;
 
     @Autowired
-    public CreditController(CreditDAO creditDAO) {
+    public CreditController(CreditDAO creditDAO, CreditOfferDAO creditOfferDAO) {
         this.creditDAO = creditDAO;
+        this.creditOfferDAO = creditOfferDAO;
     }
 
     @GetMapping("/{id}")
@@ -38,6 +41,7 @@ public class CreditController {
             return "credits/new";
 
         creditDAO.save(credit);
+        creditOfferDAO.paymentSchedule(credit);
         return "redirect:/";
     }
 

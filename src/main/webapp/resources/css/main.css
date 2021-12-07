@@ -35,7 +35,7 @@ css {
 /*    start code for the actual button:         */
 
 
-/*   
+/*
     Spot is the span on the inside of the href that
     fills the parent and makes the hover and link work
     for the entire div
@@ -50,7 +50,7 @@ css {
 }
 
 /*
-    This is the outer svg wrapper that the SVG itself will 
+    This is the outer svg wrapper that the SVG itself will
     fill. Multiple svg-wrapper classes can be put side by side.
 */
 

@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 >
 <head>
+    <title>Bank</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank.css"/>
-
+    <link rel="stylesheet" type="text/css" href="/resources/css/main.css"/>
 </head>
 <body>
 <div id="workarea">
