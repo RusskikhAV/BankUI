@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/credit/edit.css">
 </head>
 <body>
-<div id="workarea">
+<div>
     <p id="head-text">Bank "..."</p>
     <div>
         <form th:method="PATCH" th:action="@{/credits/{id}(id=${credit.getCreditId()})}" th:object="${credit}">

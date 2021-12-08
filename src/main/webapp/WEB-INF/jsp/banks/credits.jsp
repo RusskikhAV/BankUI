@@ -4,10 +4,10 @@
     <title>Credits</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/bank/bank_credits.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/table_style.css">
 </head>
 <body>
-<div id="workarea">
+<div>
     <p id="head-text">Bank "..."</p>
     <div>
         <table class="table">

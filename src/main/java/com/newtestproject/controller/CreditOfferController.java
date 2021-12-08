@@ -24,16 +24,4 @@ public class CreditOfferController {
         model.addAttribute("offers", creditOfferDAO.allScheduleOfOneCredit(id));
         return "offer/show";
     }
-
-    /*@GetMapping("/new")
-    public String newPaymentSchedule(@ModelAttribute("credit") Credit credit){
-        System.out.println(credit.getAmountCredit());
-        return "credits/offer/new";
-    }
-
-    @PostMapping()
-    public String createPaymentSchedule(@ModelAttribute("offer") CreditOffer creditOffer){
-
-        return "redirect:/banks/credits";
-    }*/
 }

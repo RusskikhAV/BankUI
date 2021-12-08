@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/main.css"/>
 </head>
 <body>
-<div id="workarea">
+<div>
     <p id="head-text">Bank "..."</p>
     <div class="position">
         <div class="svg-wrapper">

@@ -5,10 +5,11 @@
     <title>Client info</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/clients/client_show.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/table_style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/client_text.css">
 </head>
 <body>
-<div id="workarea">
+<div>
     <p id="head-text">Bank "..."</p>
     <div>
         <p id="client-text">Client #<a th:text="${client.getClientId()}">v</a></p>

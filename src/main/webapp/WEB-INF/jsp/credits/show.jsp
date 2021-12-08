@@ -5,10 +5,11 @@
     <title>Credit info</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/resources/css/main.css">
-    <link rel="stylesheet" type="text/css" href="/resources/css/credit/credit_show.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/table_style.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/client_text.css">
 </head>
 <body>
-<div id="workarea">
+<div>
     <p id="head-text">Bank "..."</p>
     <div>
         <p>Credit #<a th:text="${credit.getCreditId()}">v</a></p>

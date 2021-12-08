@@ -11,7 +11,6 @@ import java.util.List;
 
 @Component
 public class CreditDAO implements CommonRepository<Credit> {
-
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
