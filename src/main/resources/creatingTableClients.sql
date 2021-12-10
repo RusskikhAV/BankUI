@@ -4,7 +4,7 @@ create table clients
     Name            varchar(15),
     Surname         varchar(20),
     SecondName      varchar(25),
-    TelephoneNumber varchar(15),
+    TelephoneNumber varchar(25),
     Email           varchar(70),
     PassportNumber  varchar(12) unique,
     primary key (clientId)

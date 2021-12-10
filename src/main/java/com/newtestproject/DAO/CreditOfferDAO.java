@@ -38,14 +38,14 @@ public class CreditOfferDAO {
                 creditOffer.getDate(), creditOffer.getPayment(), creditOffer.getPercent(), creditOffer.getBodyCredit(), creditOffer.getBalance(), creditOffer.getClientId());
     }
 
-    public void paymentSchedule(Credit credit) {
+    public CreditOffer paymentSchedule(Credit credit) {
         final double ratePerMonth = credit.getInterestRate() / 12 / 100;
         final double annuityRate = (ratePerMonth * pow((1 + ratePerMonth), credit.getCreditTerm()) / ((pow((1 + ratePerMonth), credit.getCreditTerm())) - 1));
         double payment = credit.getAmountCredit() * annuityRate;
         double total = 0;
         LocalDate localDate = LocalDate.now();
         double balance = credit.getAmountCredit();
-       // List<CreditOffer> offers = new ArrayList<>();
+        //List<CreditOffer> offers = new ArrayList<>();
         CreditOffer creditOffer = new CreditOffer();
 
         for (int i = 1; i <= credit.getCreditTerm(); i++) {
@@ -59,7 +59,8 @@ public class CreditOfferDAO {
             creditOffer.setClientId(credit.getClientId());
             save(creditOffer);
             System.out.println(round(balance));
-           // offers.add(creditOffer);
+            System.out.println(credit.getCreditId());
+            //offers.add(creditOffer);
             //System.out.println("#" + i + " Date: " + localDate + " Payment: " + round(payment) + " Rate Schedule: " +
             // round(rateSchedule) + " Body: " + round(bodyCredit) + " Balance: " + round(balance));
             balance -= payment;
@@ -68,6 +69,6 @@ public class CreditOfferDAO {
 
         }
         System.out.println("Общая выплата: " + round(total));
-       // return offers;
+        return creditOffer;
     }
 }

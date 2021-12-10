@@ -13,12 +13,12 @@ public class CreditOffer {
     private double bodyCredit;
     private double balance;
     private int clientId;
-    private int creditId;
+   // private int creditId;
 
     public CreditOffer() {
     }
 
-    public CreditOffer(int idChek, LocalDate date, double payment, double percent, double bodyCredit, double balance, int clientId, int creditId) {
+    public CreditOffer(int idChek, LocalDate date, double payment, double percent, double bodyCredit, double balance, int clientId) {
         this.idChek = idChek;
         this.date = date;
         this.payment = payment;
@@ -26,6 +26,6 @@ public class CreditOffer {
         this.bodyCredit = bodyCredit;
         this.balance = balance;
         this.clientId = clientId;
-        this.creditId = creditId;
+        //this.creditId = creditId;
     }
 }

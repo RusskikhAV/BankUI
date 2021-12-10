@@ -35,14 +35,14 @@ public class CreditController {
     }
 
     @PostMapping()
-    public String create(@ModelAttribute("credit") @Valid Credit credit,
-                         BindingResult bindingResult) {
-        if (bindingResult.hasErrors())
+    public String create(@ModelAttribute("credit") @Valid Credit credit, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "credits/new";
-
+        }
         creditDAO.save(credit);
+        System.out.println("This is credit id " + credit.getCreditId());
         creditOfferDAO.paymentSchedule(credit);
-        return "redirect:/";
+        return "redirect:/banks/credits";
     }
 
     @GetMapping("/{id}/edit")

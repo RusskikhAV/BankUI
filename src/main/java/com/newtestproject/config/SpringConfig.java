@@ -60,7 +60,7 @@ public class SpringConfig implements WebMvcConfigurer {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
         dataSource.setDriverClassName("org.hsqldb.jdbc.JDBCDriver");
-        dataSource.setUrl("jdbc:hsqldb:file:E://SQL base/newBase;hsqldb.lock_file=false");
+        dataSource.setUrl("jdbc:hsqldb:file:E://SQL/newBase");
         dataSource.setUsername("root");
         dataSource.setPassword("1234");
 

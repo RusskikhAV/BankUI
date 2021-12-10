@@ -1,5 +1,5 @@
 insert into clients(name, surname, secondname, telephonenumber, email, passportnumber)
-values ('Александ', 'Пушкин', 'Сергеевич', '8-927-000-00-01', 'PushkinAS@mail.ru', '36 01 000001'),
+values ('Александр', 'Пушкин', 'Сергеевич', '8-927-000-00-01', 'PushkinAS@mail.ru', '36 01 000001'),
        ('Фёдор', 'Достаевский', 'Михайлович', '8-927-000-00-02', 'DostaevskyFM@mail.ru', '36 01 000002'),
        ('Николай', 'Гоголь', 'Васильевич', '8-927-000-00-03', 'GogolNV@mail.ru', '36 01 000003'),
        ('Лев', 'Толстой', 'Николаевич', '8-927-000-00-04', 'TolstoyLN@mail.ru', '36 01 000004'),

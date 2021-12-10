@@ -26,7 +26,7 @@
                 name</p>
             <br/>
             <label for="telephoneNumber">Telephone Number:</label>
-            <input type="text" th:field="*{telephoneNumber}" id="telephoneNumber" placeholder="8-888-888-88-88"/>
+            <input type="text" th:field="*{telephoneNumber}" id="telephoneNumber" placeholder="+7(888)888-8888"/>
             <p style="color: red" th:if="${#fields.hasErrors('telephoneNumber')}" th:errors="*{telephoneNumber}">Error
                 telephone
                 number</p>
@@ -41,8 +41,29 @@
                 passport
                 number</p>
             <br/>
-            <input type="submit" name="Save"/>
+            <input type="submit" name="Save" value="Add new Client"/>
         </form>
+    </div>
+    <div class="position">
+        <div class="site_button">
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150"/>
+                    <div id="text">
+                        <a href="/banks/clients"><span class="spot"></span>Previous</a>
+                    </div>
+                </svg>
+            </div>
+
+            <div class="svg-wrapper">
+                <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                    <rect id="shape" height="40" width="150"/>
+                    <div id="text">
+                        <a href="/"><span class="spot"></span>Home</a>
+                    </div>
+                </svg>
+            </div>
+        </div>
     </div>
 </div>
 </body>
