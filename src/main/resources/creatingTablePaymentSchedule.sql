@@ -7,6 +7,8 @@ create table paymentSchedule
     bodyCredit double,
     balance    double,
     clientId   bigint,
+    creditId   bigint,
 
+    foreign key (creditId) references CREDITS (creditId),
     foreign key (ClientId) references clients (ClientId)
 );

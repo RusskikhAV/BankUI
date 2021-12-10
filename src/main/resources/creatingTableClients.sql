@@ -6,6 +6,6 @@ create table clients
     SecondName      varchar(25),
     TelephoneNumber varchar(15),
     Email           varchar(70),
-    PassportNumber  varchar(12),
+    PassportNumber  varchar(12) unique,
     primary key (clientId)
 );

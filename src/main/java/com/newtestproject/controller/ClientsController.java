@@ -37,7 +37,7 @@ public class ClientsController {
             return "clients/new";
         }
         clientDAO.save(client);
-        return "redirect:/";
+        return "redirect:/banks/clients";
     }
 
     @GetMapping("/{id}/edit")
