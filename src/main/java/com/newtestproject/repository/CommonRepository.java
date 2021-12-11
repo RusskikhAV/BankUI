@@ -8,5 +8,4 @@ public interface CommonRepository<T> {
     void update(int id, T t);
 
     void delete(int id);
-
 }

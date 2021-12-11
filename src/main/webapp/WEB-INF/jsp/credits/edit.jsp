@@ -11,7 +11,7 @@
 <div>
     <p id="head-text">Bank "..."</p>
     <div>
-        <form th:method="PATCH" th:action="@{/credits/{id}(id=${credit.getCreditId()})}" th:object="${credit}">
+        <form th:method="PATCH" th:action="@{/credits/{id}(id=${credit.getClientId()})}" th:object="${credit}">
             <label for="interestRate">Percent:</label>
             <input type="text" th:field="*{interestRate}" id="interestRate"/>
             <p style="color: red" th:if="${#fields.hasErrors('interestRate')}" th:errors="*{interestRate}">Error</p>

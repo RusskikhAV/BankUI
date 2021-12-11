@@ -46,6 +46,8 @@
                 <th>Body Credit</th>
                 <th>Balance</th>
                 <th>Client Id</th>
+                <th>Credit Id</th>
+                <th>Edit</th>
             </tr>
             <tr th:each="offer : ${offers}">
                 <td th:text="${offer.getIdChek()}">id</td>
@@ -55,6 +57,8 @@
                 <td th:text="${offer.getBodyCredit()}">body</td>
                 <td th:text="${offer.getBalance()}">balance</td>
                 <td th:text="${offer.getClientId()}">clientId</td>
+                <td th:text="${offer.getCreditId()}">clientId</td>
+                <td><a th:href="@{/offer/{idClient}/{idCheque}/edit(idClient=${offer.getClientId()},idCheque=${offer.getIdChek()})}">edit</a></td>
             </tr>
         </table>
     </div>
