@@ -11,9 +11,9 @@
 <div>
     <p id="head-text">Bank "..."</p>
     <div>
-        <form  th:method="PATCH"
-               th:action="@{/offer/{idClient}/{idCheque}(idClient=${creditOffer.clientId},idCheque=${creditOffer.idChek})}"
-               th:object="${creditOffer}">
+        <form th:method="PATCH"
+              th:action="@{/offer/{idClient}/{idCheque}(idClient=${creditOffer.clientId},idCheque=${creditOffer.idChek})}"
+              th:object="${creditOffer}">
 
             <label for="date">Date:</label>
             <input type="text" th:field="*{date}" id="date"/>
@@ -40,7 +40,8 @@
         </form>
     </div>
     <div>
-        <form th:method="DELETE" th:action="@{/offer/{idClient}/{idCheque}(idClient=${creditOffer.clientId},idCheque=${creditOffer.idChek})}">
+        <form th:method="DELETE"
+              th:action="@{/offer/{idClient}/{idCheque}(idClient=${creditOffer.clientId},idCheque=${creditOffer.idChek})}">
             <input type="submit" value="Delete">
         </form>
     </div>

@@ -58,7 +58,9 @@
                 <td th:text="${offer.getBalance()}">balance</td>
                 <td th:text="${offer.getClientId()}">clientId</td>
                 <td th:text="${offer.getCreditId()}">clientId</td>
-                <td><a th:href="@{/offer/{idClient}/{idCheque}/edit(idClient=${offer.getClientId()},idCheque=${offer.getIdChek()})}">edit</a></td>
+                <td>
+                    <a th:href="@{/offer/{idClient}/{idCheque}/edit(idClient=${offer.getClientId()},idCheque=${offer.getIdChek()})}">edit</a>
+                </td>
             </tr>
         </table>
     </div>

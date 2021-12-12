@@ -30,12 +30,12 @@ public class CreditController {
     }
 
     @GetMapping("/{clientId}/new")
-    public String newCredit(@PathVariable("clientId") int clientId ,@ModelAttribute("credit") Credit credit) {
+    public String newCredit(@PathVariable("clientId") int clientId, @ModelAttribute("credit") Credit credit) {
         return "credits/new";
     }
 
     @PostMapping("/{clientId}/new")
-    public String create(@PathVariable("clientId") int clientId ,@ModelAttribute("credit") @Valid Credit credit, BindingResult bindingResult) {
+    public String create(@PathVariable("clientId") int clientId, @ModelAttribute("credit") @Valid Credit credit, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "credits/new";
         }
@@ -72,13 +72,13 @@ public class CreditController {
     }
 
     @GetMapping("/{clientId}/{creditId}/about_the_credit")
-    public String aboutTheCredit(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId, Model model){
+    public String aboutTheCredit(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId, @PathVariable("creditId") int creditId, Model model) {
         model.addAttribute("oneCredit", creditDAO.showOneOfTheCredit(clientId, creditId));
         return "credits/about_the_credit";
     }
 
     @PostMapping("/{clientId}/{creditId}/about_the_credit")
-    public String createSchedule(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId){
+    public String createSchedule(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId, @PathVariable("creditId") int creditId) {
         System.out.println(credit);
         creditOfferDAO.paymentSchedule(credit, clientId, creditId);
         return "redirect:/banks/credits";

@@ -2,25 +2,18 @@ package com.newtestproject.DAO;
 
 import com.newtestproject.model.Credit;
 import com.newtestproject.model.CreditOffer;
-import com.newtestproject.repository.CommonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 
 @Component
 public class CreditOfferDAO {
     private JdbcTemplate jdbcTemplate;
-
-    @Autowired
-    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
 
     private static double pow(double value, int powValue) {
         return Math.pow(value, powValue);
@@ -30,12 +23,17 @@ public class CreditOfferDAO {
         return Math.round(value * 100.0) / 100.0;
     }
 
+    @Autowired
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
     public List<CreditOffer> allScheduleOfOneCredit(int id) {
         return jdbcTemplate.query("SELECT * FROM paymentschedule WHERE clientId=?", new Object[]{id}, new BeanPropertyRowMapper<>(CreditOffer.class));
     }
 
 
-    public CreditOffer show(int clientId, int chequeId){
+    public CreditOffer show(int clientId, int chequeId) {
         return jdbcTemplate.query("SELECT * FROM paymentschedule WHERE clientId=? and IDCHEK=?", new Object[]{clientId, chequeId}, new BeanPropertyRowMapper<>(CreditOffer.class)).stream().findAny().orElse(null);
     }
 
@@ -47,9 +45,9 @@ public class CreditOfferDAO {
     }
 
 
-    public void update(int clientId, int chequeId, CreditOffer creditOffer){
-       jdbcTemplate.update("UPDATE paymentschedule SET DATE=?, PAYMENT=?, PERCENT=?, BODYCREDIT=?, BALANCE=? WHERE CLIENTID=? AND IDCHEK=?",
-               creditOffer.getDate(), creditOffer.getPayment(), creditOffer.getPercent(), creditOffer.getBodyCredit(), creditOffer.getBalance(), clientId, chequeId);
+    public void update(int clientId, int chequeId, CreditOffer creditOffer) {
+        jdbcTemplate.update("UPDATE paymentschedule SET DATE=?, PAYMENT=?, PERCENT=?, BODYCREDIT=?, BALANCE=? WHERE CLIENTID=? AND IDCHEK=?",
+                creditOffer.getDate(), creditOffer.getPayment(), creditOffer.getPercent(), creditOffer.getBodyCredit(), creditOffer.getBalance(), clientId, chequeId);
     }
 
 
@@ -57,7 +55,7 @@ public class CreditOfferDAO {
         jdbcTemplate.update("DELETE FROM PAYMENTSCHEDULE WHERE CLIENTID=? AND IDCHEK=?", idClient, idCheque);
     }
 
-    public List<CreditOffer> showScheduleOfTheOneCredit(int idClient, int idCredit){
+    public List<CreditOffer> showScheduleOfTheOneCredit(int idClient, int idCredit) {
         return jdbcTemplate.query("SELECT * FROM paymentschedule WHERE CLIENTID=? and CREDITID=?", new Object[]{idClient, idCredit}, new BeanPropertyRowMapper<>(CreditOffer.class));
     }
 

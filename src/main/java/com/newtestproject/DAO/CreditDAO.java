@@ -44,7 +44,7 @@ public class CreditDAO implements CommonRepository<Credit> {
         return jdbcTemplate.query("SELECT * FROM credits WHERE clientId=?", new Object[]{id}, new BeanPropertyRowMapper<>(Credit.class));
     }
 
-    public Credit showOneOfTheCredit(int clientId, int creditId){
+    public Credit showOneOfTheCredit(int clientId, int creditId) {
         return jdbcTemplate.query("SELECT * FROM credits WHERE clientID=? AND CREDITID=?", new Object[]{clientId,
                 creditId}, new BeanPropertyRowMapper<>(Credit.class)).stream().findAny().orElse(null);
     }

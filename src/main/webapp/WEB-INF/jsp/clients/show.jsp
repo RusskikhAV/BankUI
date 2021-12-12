@@ -62,7 +62,8 @@
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                     <rect id="shape" height="40" width="150"/>
                     <div id="text">
-                        <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}"><span class="spot"></span>Client credits</a>
+                        <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}"><span
+                                class="spot"></span>Client credits</a>
                     </div>
                 </svg>
             </div>

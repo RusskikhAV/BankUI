@@ -1,7 +1,6 @@
 package com.newtestproject.controller;
 
 import com.newtestproject.DAO.CreditOfferDAO;
-import com.newtestproject.model.Credit;
 import com.newtestproject.model.CreditOffer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,29 +28,29 @@ public class CreditOfferController {
     }
 
     @GetMapping("/{idClient}/{idCheque}/edit")
-    public String edit(@PathVariable("idClient") int idClient,@PathVariable("idCheque") int idCheque, Model model){
-        model.addAttribute("creditOffer", creditOfferDAO.show(idClient,idCheque));
+    public String edit(@PathVariable("idClient") int idClient, @PathVariable("idCheque") int idCheque, Model model) {
+        model.addAttribute("creditOffer", creditOfferDAO.show(idClient, idCheque));
         return "offer/edit";
     }
 
     @PatchMapping("/{idClient}/{idCheque}")
     public String updateOneOfTheSchedule(@ModelAttribute("creditOffer") @Valid CreditOffer creditOffer, BindingResult bindingResult,
-                                         @PathVariable("idClient") int idClient,@PathVariable("idCheque") int idCheque){
-        if(bindingResult.hasErrors()) {
-        return "offer/edit";
+                                         @PathVariable("idClient") int idClient, @PathVariable("idCheque") int idCheque) {
+        if (bindingResult.hasErrors()) {
+            return "offer/edit";
         }
-       creditOfferDAO.update(idClient, idCheque, creditOffer);
+        creditOfferDAO.update(idClient, idCheque, creditOffer);
         return "redirect:/banks/clients";
     }
 
     @DeleteMapping("/{idClient}/{idCheque}")
-    public String delete(@PathVariable("idClient") int idClient,@PathVariable("idCheque") int idCheque){
-        creditOfferDAO.delete(idClient , idCheque);
+    public String delete(@PathVariable("idClient") int idClient, @PathVariable("idCheque") int idCheque) {
+        creditOfferDAO.delete(idClient, idCheque);
         return "redirect:/banks/clients";
     }
 
     @GetMapping("/{idClient}/{idCredit}/schedule_of_the_one_credit")
-    public String scheduleOfTheOneCredit(@PathVariable("idClient") int idClient,@PathVariable("idCredit") int idCredit, Model model){
+    public String scheduleOfTheOneCredit(@PathVariable("idClient") int idClient, @PathVariable("idCredit") int idCredit, Model model) {
         model.addAttribute("creditOffer", creditOfferDAO.showScheduleOfTheOneCredit(idClient, idCredit));
         return "offer/schedule_of_the_one_credit";
     }
