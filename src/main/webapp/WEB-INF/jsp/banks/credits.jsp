@@ -25,7 +25,8 @@
                 <td th:text="${credit.getCreditTerm()}">Credit Period</td>
                 <td th:text="${credit.getAmountCredit()}">Amount Credit</td>
                 <td th:text="${credit.getClientId()}">Client Id</td>
-                <td><a th:href="@{/credits/{id}/edit(id=${credit.getClientId()})}">edit</a></td>
+                <td><a th:href="@{/credits/{clientId}/{creditId}/about_the_credit(clientId=${credit.getClientId()},
+            creditId=${credit.getCreditId()})}">more info</a></td>
             </tr>
         </table>
     </div>

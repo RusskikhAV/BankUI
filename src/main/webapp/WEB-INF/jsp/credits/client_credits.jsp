@@ -15,12 +15,15 @@
             <th>Interest Rate</th>
             <th>Amount Credit</th>
             <th>Credit Term</th>
+            <th>More info</th>
         </tr>
         <tr th:each="credit : ${credits}">
             <td th:text="${credit.getCreditId()}">id</td>
             <td th:text="${credit.getInterestRate()}">Interest Rate</td>
             <td th:text="${credit.getAmountCredit()}">Amount Credit</td>
             <td th:text="${credit.getCreditTerm()}">Credit Term</td>
+            <td><a th:href="@{/credits/{clientId}/{creditId}/about_the_credit(clientId=${credit.getClientId()},
+            creditId=${credit.getCreditId()})}">more info</a></td>
         </tr>
     </table>
 </div>

@@ -57,7 +57,7 @@ public class CreditOfferDAO {
     }
 
 
-    public CreditOffer paymentSchedule(Credit credit) {
+    public void paymentSchedule(Credit credit) {
         final double ratePerMonth = credit.getInterestRate() / 12 / 100;
         final double annuityRate = (ratePerMonth * pow((1 + ratePerMonth), credit.getCreditTerm()) / ((pow((1 + ratePerMonth), credit.getCreditTerm())) - 1));
         double payment = credit.getAmountCredit() * annuityRate;
@@ -88,6 +88,6 @@ public class CreditOfferDAO {
 
         }
         System.out.println("Общая выплата: " + round(total));
-        return creditOffer;
+        //return creditOffer;
     }
 }

@@ -12,25 +12,29 @@
     <p id="head-text">Bank "..."</p>
     <div>
         <form th:method="POST" th:action="@{/credits}" th:object="${credit}">
-            <label for="interestRate">Percent: </label>
-            <input type="text" th:field="*{interestRate}" id="interestRate"/>
-            <p style="color: red" th:if="${#fields.hasErrors('interestRate')}" th:errors="*{interestRate}">Error
-                interestRate</p>
-            <br/>
-            <label for="creditTerm">Credit Term:</label>
-            <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
-            <p style="color: red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">Error
-                creditTerm</p>
-            <br/>
-            <label for="amountCredit">Amount Credit:</label>
-            <input type="text" th:field="*{amountCredit}" id="amountCredit"/>
-            <p style="color: red" th:if="${#fields.hasErrors('amountCredit')}" th:errors="*{amountCredit}">Error
-                amountCredit</p>
-            <br/>
-            <label for="clientId">Client Id:</label>
-            <input type="text" th:field="*{clientId}" id="clientId"/>
-            <p style="color: red" th:if="${#fields.hasErrors('clientId')}" th:errors="*{clientId}">Error clientId</p>
-            <br/>
+            <div>
+                <label for="interestRate">Percent: </label>
+                <input type="text" th:field="*{interestRate}" id="interestRate"/>
+                <p style="color: red" th:if="${#fields.hasErrors('interestRate')}" th:errors="*{interestRate}">Error
+                    interestRate</p>
+            </div>
+            <div>
+                <label for="creditTerm">Credit Term:</label>
+                <input type="text" th:field="*{creditTerm}" id="creditTerm"/>
+                <p style="color: red" th:if="${#fields.hasErrors('creditTerm')}" th:errors="*{creditTerm}">Error
+                    creditTerm</p>
+            </div>
+            <div>
+                <label for="amountCredit">Amount Credit:</label>
+                <input type="text" th:field="*{amountCredit}" id="amountCredit"/>
+                <p style="color: red" th:if="${#fields.hasErrors('amountCredit')}" th:errors="*{amountCredit}">Error
+                    amountCredit</p>
+            </div>
+            <div>
+                <label for="clientId">Client Id:</label>
+                <input type="text" th:field="*{clientId}" id="clientId"/>
+                <p style="color: red" th:if="${#fields.hasErrors('clientId')}" th:errors="*{clientId}">Error clientId</p>
+            </div>
 
             <input type="submit" name="Save" value="Apply for a loan"/>
         </form>

@@ -20,7 +20,7 @@ public class CreditDAO implements CommonRepository<Credit> {
 
     @Override
     public Credit show(int id) {
-        return jdbcTemplate.query("SELECT * FROM credits WHERE clientId=?", new Object[]{id}, new BeanPropertyRowMapper<>(Credit.class)).stream().findAny().orElse(null);
+        return jdbcTemplate.query("SELECT * FROM credits WHERE creditId=?", new Object[]{id}, new BeanPropertyRowMapper<>(Credit.class)).stream().findAny().orElse(null);
     }
 
     @Override
@@ -42,5 +42,10 @@ public class CreditDAO implements CommonRepository<Credit> {
 
     public List<Credit> allCreditsOfOneClient(int id) {
         return jdbcTemplate.query("SELECT * FROM credits WHERE clientId=?", new Object[]{id}, new BeanPropertyRowMapper<>(Credit.class));
+    }
+
+    public Credit showOneOfTheCredit(int clientId, int creditId){
+        return jdbcTemplate.query("SELECT * FROM credits WHERE clientID=? AND CREDITID=?", new Object[]{clientId,
+                creditId}, new BeanPropertyRowMapper<>(Credit.class)).stream().findAny().orElse(null);
     }
 }

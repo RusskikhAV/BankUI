@@ -26,7 +26,7 @@ public class CreditController {
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("credit", creditDAO.show(id));
-        return "credits/show";
+        return "redirect:/banks/clients";
     }
 
     @GetMapping("/new")
@@ -71,5 +71,11 @@ public class CreditController {
     public String allCreditsOfOneClient(@PathVariable("id") int id, Model model) {
         model.addAttribute("credits", creditDAO.allCreditsOfOneClient(id));
         return "credits/client_credits";
+    }
+
+    @GetMapping("/{clientId}/{creditId}/about_the_credit")
+    public String aboutTheCredit(@PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId, Model model){
+        model.addAttribute("oneCredit", creditDAO.showOneOfTheCredit(clientId, creditId));
+        return "credits/about_the_credit";
     }
 }
