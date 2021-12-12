@@ -29,19 +29,17 @@ public class CreditController {
         return "redirect:/banks/clients";
     }
 
-    @GetMapping("/new")
-    public String newCredit(@ModelAttribute("credit") Credit credit) {
+    @GetMapping("/{clientId}/new")
+    public String newCredit(@PathVariable("clientId") int clientId ,@ModelAttribute("credit") Credit credit) {
         return "credits/new";
     }
 
-    @PostMapping()
-    public String create(@ModelAttribute("credit") @Valid Credit credit, BindingResult bindingResult) {
+    @PostMapping("/{clientId}/new")
+    public String create(@PathVariable("clientId") int clientId ,@ModelAttribute("credit") @Valid Credit credit, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "credits/new";
         }
         creditDAO.save(credit);
-        System.out.println("This is credit id " + credit.getCreditId());
-        creditOfferDAO.paymentSchedule(credit);
         return "redirect:/banks/credits";
     }
 
@@ -74,8 +72,15 @@ public class CreditController {
     }
 
     @GetMapping("/{clientId}/{creditId}/about_the_credit")
-    public String aboutTheCredit(@PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId, Model model){
+    public String aboutTheCredit(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId, Model model){
         model.addAttribute("oneCredit", creditDAO.showOneOfTheCredit(clientId, creditId));
         return "credits/about_the_credit";
+    }
+
+    @PostMapping("/{clientId}/{creditId}/about_the_credit")
+    public String createSchedule(@ModelAttribute("oneCredit") Credit credit, @PathVariable("clientId") int clientId,@PathVariable("creditId") int creditId){
+        System.out.println(credit);
+        creditOfferDAO.paymentSchedule(credit, clientId, creditId);
+        return "redirect:/banks/credits";
     }
 }

@@ -11,7 +11,9 @@
 <div>
     <p id="head-text">Bank "..."</p>
     <div>
-        <form th:method="POST" th:action="@{/credits}" th:object="${credit}">
+        <form th:method="POST"
+              th:action="@{/credits/{clientId}/new(clientId=${credit.getClientId()})}"
+              th:object="${credit}">
             <div>
                 <label for="interestRate">Percent: </label>
                 <input type="text" th:field="*{interestRate}" id="interestRate"/>
@@ -30,10 +32,10 @@
                 <p style="color: red" th:if="${#fields.hasErrors('amountCredit')}" th:errors="*{amountCredit}">Error
                     amountCredit</p>
             </div>
+
             <div>
                 <label for="clientId">Client Id:</label>
-                <input type="text" th:field="*{clientId}" id="clientId"/>
-                <p style="color: red" th:if="${#fields.hasErrors('clientId')}" th:errors="*{clientId}">Error clientId</p>
+                <input type="text" readonly th:field="*{clientId}" id="clientId"/>
             </div>
 
             <input type="submit" name="Save" value="Apply for a loan"/>

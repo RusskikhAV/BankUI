@@ -41,8 +41,9 @@ public class CreditOfferDAO {
 
 
     public void save(CreditOffer creditOffer) {
-        jdbcTemplate.update("INSERT INTO paymentschedule (DATE, PAYMENT, PERCENT, BODYCREDIT, BALANCE, CLIENTID) VALUES (?, ?, ?, ?, ?, ?)",
-                creditOffer.getDate(), creditOffer.getPayment(), creditOffer.getPercent(), creditOffer.getBodyCredit(), creditOffer.getBalance(), creditOffer.getClientId());
+        jdbcTemplate.update("INSERT INTO paymentschedule (DATE, PAYMENT, PERCENT, BODYCREDIT, BALANCE, CLIENTID, CREDITID) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                creditOffer.getDate(), creditOffer.getPayment(), creditOffer.getPercent(), creditOffer.getBodyCredit(),
+                creditOffer.getBalance(), creditOffer.getClientId(), creditOffer.getCreditId());
     }
 
 
@@ -56,8 +57,12 @@ public class CreditOfferDAO {
         jdbcTemplate.update("DELETE FROM PAYMENTSCHEDULE WHERE CLIENTID=? AND IDCHEK=?", idClient, idCheque);
     }
 
+    public List<CreditOffer> showScheduleOfTheOneCredit(int idClient, int idCredit){
+        return jdbcTemplate.query("SELECT * FROM paymentschedule WHERE CLIENTID=? and CREDITID=?", new Object[]{idClient, idCredit}, new BeanPropertyRowMapper<>(CreditOffer.class));
+    }
 
-    public void paymentSchedule(Credit credit) {
+
+    public void paymentSchedule(Credit credit, int clientId, int creditId) {
         final double ratePerMonth = credit.getInterestRate() / 12 / 100;
         final double annuityRate = (ratePerMonth * pow((1 + ratePerMonth), credit.getCreditTerm()) / ((pow((1 + ratePerMonth), credit.getCreditTerm())) - 1));
         double payment = credit.getAmountCredit() * annuityRate;
@@ -76,9 +81,11 @@ public class CreditOfferDAO {
             creditOffer.setBodyCredit(round(bodyCredit));
             creditOffer.setBalance(round(balance));
             creditOffer.setClientId(credit.getClientId());
+            creditOffer.setCreditId(creditId);
             save(creditOffer);
             System.out.println(round(balance));
-            System.out.println(credit.getCreditId());
+            System.out.println("clID " + clientId);
+            System.out.println("crID " + creditId);
             //offers.add(creditOffer);
             //System.out.println("#" + i + " Date: " + localDate + " Payment: " + round(payment) + " Rate Schedule: " +
             // round(rateSchedule) + " Body: " + round(bodyCredit) + " Balance: " + round(balance));
@@ -87,7 +94,7 @@ public class CreditOfferDAO {
             localDate = localDate.plusMonths(1);
 
         }
-        System.out.println("Общая выплата: " + round(total));
+        System.out.println("Total: " + round(total));
         //return creditOffer;
     }
 }

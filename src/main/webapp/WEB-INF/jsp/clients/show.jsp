@@ -13,7 +13,8 @@
     <p id="head-text">Bank "..."</p>
     <div>
         <p id="client-text">Client #<a th:text="${client.getClientId()}">v</a></p>
-        <form th:method="DELETE" th:action="@{/clients/{id}(id=${client.getClientId()})}">
+        <form th:method="DELETE"
+              th:action="@{/clients/{id}(id=${client.getClientId()})}">
             <input type="submit" value="Delete">
         </form>
         <table class="table">
@@ -61,9 +62,7 @@
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                     <rect id="shape" height="40" width="150"/>
                     <div id="text">
-                        <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}" target="_blank"
-                           onClick="popupWin = window.open(this.href, 'contacts', 'location,width=1200,height=900,top=0'); popupWin.focus(); return false;"><span
-                                class="spot"></span>Client credits</a>
+                        <a th:href="@{/credits/{id}/client_credits(id=${client.getClientId()})}"><span class="spot"></span>Client credits</a>
                     </div>
                 </svg>
             </div>
@@ -72,7 +71,8 @@
                 <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
                     <rect id="shape" height="40" width="150"/>
                     <div id="text">
-                        <a href="/credits/new"><span class="spot"></span>Create new credit</a>
+                        <a th:href="@{/credits/{clientId}/new(clientId=${client.getClientId()})}"><span
+                                class="spot"></span>Create new credit</a>
                     </div>
                 </svg>
             </div>

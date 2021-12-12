@@ -49,4 +49,10 @@ public class CreditOfferController {
         creditOfferDAO.delete(idClient , idCheque);
         return "redirect:/banks/clients";
     }
+
+    @GetMapping("/{idClient}/{idCredit}/schedule_of_the_one_credit")
+    public String scheduleOfTheOneCredit(@PathVariable("idClient") int idClient,@PathVariable("idCredit") int idCredit, Model model){
+        model.addAttribute("creditOffer", creditOfferDAO.showScheduleOfTheOneCredit(idClient, idCredit));
+        return "offer/schedule_of_the_one_credit";
+    }
 }
